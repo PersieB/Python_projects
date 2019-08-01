@@ -1,0 +1,63 @@
+class conference_attendees:
+    def __init__(self,name,company,state,enrolled= None):
+        self.set_name = name
+        self.set_company = company
+        self.set_state = state
+        self.email = name + "@" + company + ".com"
+        if enrolled is None:
+            self.enrolled = []
+        else:
+            self.enrolled = enrolled
+    def get_name(self):
+        return self.set_name
+    def get_company(self):
+        return self.set_company
+    def get_mail(self):
+        return self.email
+    def add_student(self, enr):
+        if enr not in self.enrolled:
+            self.enrolled.append(enr)
+    def print_enr(self,):
+        for enr in self.enrolled:
+            print('--->',enr.get_name())
+    def print_list(self):
+        self.enrolled.append(self.set_name)
+        self.enrolled.append(self.set_company)
+        self.enrolled.append(self.set_state)
+        self.enrolled.append(self.email)
+        return self.enrolled
+
+davis = conference_attendees('Davis', 'blueskies','Ghana',[])
+
+davis.print_list()
+def main():
+
+    def show_list():
+        infile = open('list.txt','r')
+        outfile= open('list.txt', 'w')
+        data = infile.read()
+        print(data)
+        infile.close()
+
+    def add_list():
+        infile = open('list.txt','r')
+        outfile = open('list.txt','w')
+        data = infile.read()
+        for item in davis.enrolled:
+            print(item, file = outfile, end=" ")
+        infile.close()
+
+    def remove_list():
+        x = int(input('Enter the line number to remove: '))
+        infile = open('list.txt','r')
+        outfile = open('list.txt','w')
+        data = infile.readlines()
+        for i in data:
+            if i == x-1:
+                data.remove(i)
+        infile.close()
+
+    show_list()
+    add_list()
+    remove_list()
+main()

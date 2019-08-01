@@ -1,0 +1,12 @@
+import socket
+s = socket.socket()
+host = 'localhost'
+port = 4000
+s.bind((host, port))
+print('Server listening on port: ', port)
+s.listen(1)
+c, a = s.accept()
+print('Connection from: ', str(a))
+c.send(b'Hello HQ Boys!')
+c.close()
+

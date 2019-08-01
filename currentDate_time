@@ -1,0 +1,13 @@
+#2 ways to find the current time & date!
+
+import time, datetime
+epochseconds = time.time()
+#print(epochseconds)
+#Current time(date)
+print(time.ctime(epochseconds))
+
+#current date & time
+dt = datetime.datetime.today()
+print("Today's date is {}/{}/{}".format(dt.day, dt.month, dt.year))
+print("Current time is: {}:{}:{}".format(dt.hour, dt.minute, dt.second))
+

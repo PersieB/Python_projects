@@ -1,0 +1,16 @@
+# raising InvalidPasswordException when the password is less than 8 characters
+class Error(Exception):
+    pass
+class InvalidPasswordException(Error):
+    pass
+try:
+    password = input("Enter a password: ")
+    if len(password) < 8:
+        raise InvalidPasswordException
+except InvalidPasswordException:
+    print("Passwords should be at least 8 characters")
+else:
+    print("Password perfect!")
+finally:
+    print('Rate us in the space below')
+

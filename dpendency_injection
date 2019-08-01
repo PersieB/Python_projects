@@ -1,0 +1,26 @@
+# Using Duck Typing for Dependency Injection: Flight and engine
+class Flight:
+    def __init__(self, engine):
+        self.engine = engine
+
+    def start_engine(self):
+        self.engine.start()
+
+
+class AirbusEngine:
+    def start(self):
+        print("Airbus engine started")
+
+
+class BoingEngine:
+    def start(self):
+        print("Boing engine started")
+
+
+a = AirbusEngine()
+f = Flight(a)
+f.start_engine()
+
+b = BoingEngine()
+f1 = Flight(b)
+f1.start_engine()

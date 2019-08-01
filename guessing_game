@@ -1,0 +1,32 @@
+# Type END to exit program
+import random
+
+number1 = random.randint(1, 100)
+number2 = int(input("Guess a number: "))
+if number2 == number1:
+    print("congratulations! you guessed right")
+else:
+    while number2 != number1:
+        print('Type END if you wish to exit program')
+        if number2 > number1:
+            print("try entering  smaller number or type END to exit")
+
+            test = input()
+            if test.isdigit():
+                number2 = int(test)
+            elif test == "END":
+                break
+            else:
+                print("invalid response")
+        else:
+            print("try entering a larger number or type END to exit")
+
+            test = input()
+            if test.isdigit():
+                number2 = int(test)
+            elif test == "END":
+                break
+            else:
+                print("invalid response")
+    if number2 == number1:
+        print("Congratulations! You got the answer")

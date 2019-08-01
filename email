@@ -1,0 +1,17 @@
+import smtplib  # allows us to send emails
+from email.mime.text import MIMEText  # helps to build the emai: body, subject etc
+body = "Hello Percy! Never give up on your dreams"
+msg = MIMEText(body)
+# recipients = [list of email accounts]
+msg["From"] = "persiebrown285@gmail.com"
+msg["To"] = "persiebrown285@gmail.com"  # use ",".join(recipients)- when needed
+msg["Subject"] = "YOLO"
+server = smtplib.SMTP("smtp.gmail.com", 587)  # default port is 587
+server.starttls()  # enables a secured connection
+server.login("persiebrown285@gmail.com", "EDINhazard285")
+server.send_message(msg)
+print("Mail sent!")
+server.quit()
+
+'''To fix the error anytime on login issue: 
+https://support.google.com/accounts/answer/6010255'''

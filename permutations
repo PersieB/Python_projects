@@ -1,0 +1,26 @@
+# finding the possible permutation forms of an array with the minimal sum
+from itertools import permutations
+
+
+def per(lst):
+    a = []
+    l = list(permutations(lst.split(",")))
+    # loop through the list of permutations, find the sums and put all in a list
+    for i in l:
+        total = 0
+        for t in range(len(i)):
+            if t < len(i) - 1:
+                total += int(i[t]) * int(i[t + 1])
+        a.append(total)
+    b = min(a)
+    for i in range(len(a)):
+        if a[i] == b:
+            # print corresponding permutation with the minimum sum
+            print(l[i])
+            print(b)
+
+
+per("40,25,10,5,1")
+
+
+

@@ -1,0 +1,59 @@
+from abc import abstractmethod, ABC
+
+# Interface: TouchScreenLaptop & Inheritance
+
+
+class TouchScreenLaptop(ABC):
+    @abstractmethod
+    def scroll(self):
+        pass
+
+    @abstractmethod
+    def click(self):
+        pass
+
+
+class HP(TouchScreenLaptop):
+    def scroll(self):
+        print("Scroll up or down")
+
+    @abstractmethod
+    def click(self):
+        pass
+
+
+class DELL(TouchScreenLaptop):
+    def scroll(self):
+        print("Use arrows to scroll")
+
+    @abstractmethod
+    def click(self):
+        pass
+
+
+class HPNotebook(HP):
+    def click(self):
+        print("use the left or right button")
+
+    @abstractmethod
+    def scroll(self):
+        pass
+
+
+class DELLNotebook(DELL):
+    def click(self):
+        print("Double click or right click")
+
+    @abstractmethod
+    def scroll(self):
+        pass
+
+
+h = HP()
+A = HPNotebook(h)
+A.HP.click()
+
+
+
+
+
