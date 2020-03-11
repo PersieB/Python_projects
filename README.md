@@ -1,1 +1,1 @@
-
+As a Secretary of the Leo Club on campus, I created this program to enable easy addition and deletion of members from records as well as easy updates of information, stored in a text file. I believed it was better as compared to keeping records in a note book which is likely to make queriying difficult.
